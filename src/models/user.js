@@ -4,7 +4,7 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-import Task = require('./task')
+const Task = require('./task')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -50,6 +50,8 @@ const userSchema = new mongoose.Schema({
             required: true
         }
     }]
+}, {
+    timestamps: true
 })
 
 
