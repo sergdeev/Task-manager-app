@@ -67,7 +67,7 @@ userSchema.virtual('tasks', {
 
 userSchema.methods.generateAuthToken = async function() {
     const user = this
-    const token = jwt.sign({}, 'thisismysecret')
+    const token = jwt.sign({}, process.env.JSON_WEBTOKEN_SECRET)
     console.log('token', token)
 
     user.tokens.concat({ token })
